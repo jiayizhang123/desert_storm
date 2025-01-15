@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx6irqy6q1qto"]
+
+[ext_resource type="Script" path="res://info.gd" id="1_5wt0x"]
+[ext_resource type="Texture2D" uid="uid://wd7n0td575y5" path="res://asset/Panel_1.png" id="1_tfmqq"]
+[ext_resource type="Texture2D" uid="uid://cbka8a8qd1d5e" path="res://asset/Accept_Button_Light.png" id="3_bkv5j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5711i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ulvrl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mib4n"]
+
+[node name="info" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5wt0x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(161, 116)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tfmqq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 44.0
+offset_right = 265.0
+offset_bottom = 161.0
+theme_override_font_sizes/normal_font_size = 24
+scroll_active = false
+scroll_following = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 167.0
+offset_right = 227.0
+offset_bottom = 198.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5711i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ulvrl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_mib4n")
+icon = ExtResource("3_bkv5j")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
